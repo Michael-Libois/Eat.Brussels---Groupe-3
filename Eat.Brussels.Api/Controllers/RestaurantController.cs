@@ -43,8 +43,27 @@ namespace Eat.Brussels.Api.Controllers
             //RestaurantRepo repo = new RestaurantRepo(databaseContext);
             //List<Restaurant> restos = repo.RetrieveAll();
             //return restos;
-            
+
             return restaurants;
         }
+
+        //Essai 1 : 
+        //public IEnumerable<Restaurant> GetAllRestaurants(string query)
+        //{
+        //    //Gérer les erreurs de la query
+        //    CookTypeRepo repoCookType = new CookTypeRepo(databaseContext);
+        //    RestaurantRepo repoRestaurant = new RestaurantRepo(databaseContext);
+        //    List<CookType> types = repoCookType.RetrieveByTitle(query);
+        //    List<Restaurant> restos;
+        //    if (types == null)
+        //    {
+        //        restos = repoRestaurant.RetrieveByName(query);
+        //    }
+        //    else
+        //    {
+        //        //restos = .ToList();
+        //    }
+        //    return restos;
+        //}
     }
 }

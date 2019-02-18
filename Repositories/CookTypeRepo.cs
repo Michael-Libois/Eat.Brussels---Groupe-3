@@ -1,14 +1,20 @@
 ﻿using Common;
+using ContextWithEntityFramework;
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Repositories
 {
-    class CookTypeRepo : ICrudable<CookType>
+    public class CookTypeRepo : ICrudable<CookType>
     {
-
+        private DatabaseContext dbContext;
+        public CookTypeRepo(DatabaseContext db)
+        {
+            dbContext = db;
+        }
 
         public CookType Create(CookType obj)
         {
@@ -38,6 +44,10 @@ namespace Repositories
         public CookType Retrieve(string id)
         {
             throw new NotImplementedException();
+        }
+        public List<CookType> RetrieveByTitle(string title)
+        {
+            return dbContext.CookTypes.Where(c=>c.Title == title).ToList();
         }
 
         public List<CookType> RetrieveAll()

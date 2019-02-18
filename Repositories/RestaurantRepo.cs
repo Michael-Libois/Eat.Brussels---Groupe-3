@@ -52,6 +52,11 @@ namespace Repositories
                 return Retrieve(id);
             return null;
         }
+        public List<Restaurant> RetrieveByName(string name)
+        {
+            //Meilleure recherche
+            return dbContext.Restaurants.Where(r => r.Name == name).ToList();
+        }
 
         public List<Restaurant> RetrieveAll()
         {
